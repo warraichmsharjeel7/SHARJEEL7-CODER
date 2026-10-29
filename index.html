@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharjeel7 Coder | Web Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Glowing Background Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <div class="cursor-blur"></div>
+
+    <div class="main-card">
+        <header>
+            <div class="logo">SHARJEEL7 <span>CODER</span></div>
+            <nav>
+                <button onclick="showTab('home', event)" class="nav-btn active">Home</button>
+                <button onclick="showTab('about', event)" class="nav-btn">About</button>
+                <button onclick="showTab('contact', event)" class="nav-btn">Contact</button>
+            </nav>
+        </header>
+
+        <!-- HOME SECTION -->
+        <section id="home" class="tab-content active">
+            <div class="layout">
+                <div class="text-box">
+                    <h2 class="reveal-text">WELCOME</h2>
+                    <h1 class="main-heading">WEB <span class="shimmer">DEVELOPER</span></h1>
+                    <p>"As a Web Developer, I turn complex logic into clean, high-performance websites—specializing in modern web architecture and seamless digital experiences."</p>
+                    <button class="glow-btn" onclick="showTab('contact', event)">
+                        <span>Let's Connect</span>
+                    </button>
+                </div>
+                <div class="img-box">
+                    <div class="img-wrapper">
+                        <!-- Replacement Image for Home -->
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Sharjeel7 Coder Hero Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="tab-content">
+            <div class="layout">
+                <div class="text-box">
+                    <h2 class="reveal-text">STORY</h2>
+                    <h1>I’m Sharjeel7<span class="shimmer">Web Developer</span></h1>
+                    <p>"As an emerging Web Developer, I am currently engineering high-impact digital solutions. My portfolio reflects a journey of rigorous technical exploration and continuous learning. From mastering core programming logic to building responsive web structures,"</p>
+                    <p>"I focus on writing clean, scalable code. Every project and practical assignment I build is treated with a professional mindset—optimized for speed, accessibility, and user experience."</p>
+                    <div class="stats">
+                        <div class="stat-item"><strong>95%</strong><span>Problem Solving</span></div>
+                        <div class="stat-item"><strong>100%</strong><span>Dedication</span></div>
+                    </div>
+                </div>
+                <div class="img-box">
+                    <div class="img-wrapper">
+                        <!-- Replacement Image for About -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Sharjeel7 About Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="tab-content">
+            <div class="layout">
+                <div class="text-box">
+                    <h2 class="reveal-text">GET IN TOUCH</h2>
+                    <h1>Let’s Create <span class="shimmer">Together.</span></h1>
+                    <p>"Have a project in mind or want to collaborate? Feel free to reach out. I'm always open to discussing new opportunities, creative ideas, or web development projects."</p>
+                    <div class="contact-info">
+                        <p class="contact-detail"><strong>Email:</strong>warraichmsharjeel18@gmail.com</p>
+                        <p class="contact-detail"><strong>Status:</strong> Available for Freelance & Projects</p>
+                    </div>
+                    <ul class="tag-list">
+                        <li>#Sharjeel7Coder</li>
+                        <li>#WebDeveloper</li>
+                        <li>#CleanCode</li>
+                    </ul>
+                </div>
+                <div class="img-box">
+                    <div class="img-wrapper">
+                        <!-- Replacement Image for Contact -->
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Sharjeel7 Contact Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showTab(id, event) {
+            document.querySelectorAll('.tab-content').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            
+            if (event && event.currentTarget) {
+                event.currentTarget.classList.add('active');
+            } else {
+                const btn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.textContent.toLowerCase() === id.toLowerCase());
+                if (btn) btn.classList.add('active');
+            }
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            const blur = document.querySelector('.cursor-blur');
+            blur.style.left = e.clientX + 'px';
+            blur.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>
